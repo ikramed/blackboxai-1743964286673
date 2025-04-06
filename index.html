@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Portal - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero {
+            background-image: url('https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-screen flex items-center justify-center bg-gray-900 bg-opacity-50">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Your Health, Our Priority</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Book appointments with top doctors and manage your healthcare digitally</p>
+            
+            <!-- Appointment Booking Form -->
+            <div class="bg-white bg-opacity-90 rounded-lg shadow-xl p-6 max-w-md mx-auto text-gray-800">
+                <h2 class="text-2xl font-bold mb-4">Book an Appointment</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-left mb-1">Full Name</label>
+                        <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-left mb-1">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-left mb-1">Doctor Specialty</label>
+                        <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>General Physician</option>
+                            <option>Cardiologist</option>
+                            <option>Dermatologist</option>
+                            <option>Pediatrician</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-left mb-1">Appointment Date</label>
+                        <input type="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                        Book Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Easy Appointments</h3>
+                    <p>Book doctor appointments with just a few clicks, anytime, anywhere.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Digital Prescriptions</h3>
+                    <p>Receive and manage your prescriptions digitally, no more paper slips.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Medical History</h3>
+                    <p>Track and access your complete medical history in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Script to load components -->
+    <script>
+        // Load header and footer
+        fetch('shared/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+        
+        fetch('shared/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+</body>
+</html>

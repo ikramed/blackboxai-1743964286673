@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Portal - My Prescriptions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">My Prescriptions</h1>
+
+        <!-- Prescriptions Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Prescription Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-blue-500">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-800">Amoxicillin</h2>
+                            <p class="text-gray-600">Dr. Sarah Johnson</p>
+                        </div>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Active</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-sm text-gray-500">Dosage</p>
+                            <p class="font-medium">500mg every 8 hours</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Duration</p>
+                            <p class="font-medium">7 days</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Instructions</p>
+                            <p class="font-medium">Take with food. Complete full course even if symptoms improve.</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Date Issued</p>
+                            <p class="font-medium">2023-11-10</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 flex justify-end">
+                        <button class="text-blue-600 hover:text-blue-800 flex items-center">
+                            <i class="fas fa-download mr-2"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prescription Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-green-500">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-800">Lisinopril</h2>
+                            <p class="text-gray-600">Dr. Michael Chen</p>
+                        </div>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Completed</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-sm text-gray-500">Dosage</p>
+                            <p class="font-medium">10mg once daily</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Duration</p>
+                            <p class="font-medium">30 days (Refillable)</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Instructions</p>
+                            <p class="font-medium">Take in the morning. Monitor blood pressure regularly.</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Date Issued</p>
+                            <p class="font-medium">2023-10-25</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 flex justify-end">
+                        <button class="text-blue-600 hover:text-blue-800 flex items-center">
+                            <i class="fas fa-download mr-2"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State (for demonstration) -->
+            <div class="md:hidden lg:block bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-gray-300">
+                <div class="p-6 h-full flex flex-col items-center justify-center text-center">
+                    <div class="text-gray-400 mb-4">
+                        <i class="fas fa-prescription-bottle-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-700 mb-2">No more prescriptions</h3>
+                    <p class="text-gray-500">Your recent prescriptions appear here</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Script to load components -->
+    <script>
+        // Load header and footer
+        fetch('shared/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+        
+        fetch('shared/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+</body>
+</html>
